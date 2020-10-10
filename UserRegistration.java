@@ -4,17 +4,17 @@ import org.apache.logging.log4j.Logger;
 import java.util.Scanner;
 public class UserRegistration {
 	private static final Logger LOG = LogManager.getLogger(UserRegistration.class);
-	private boolean validatePassword(String password) {
-		return password.matches("(?=^.{8,}$)(?=.[A-Z])(?=.[0-9])[a-zA-Z0-9][@#$%_][0-9azA-Z]");
+	private boolean validateEmail(String mail) {
+		return mail.matches("^[a-zA-Z0-9_]+([.+-]{1}[a-zA-Z0-9_]+)*[@]{1}[a-zA-Z0-
+				9]+[.]{1}[a-zA-Z0-9]{2,}([.]{1}[a-zA-Z]{2,})?$");
 	}
 	public static void main( String[] args ) {
 		Scanner sc = new Scanner(System.in);
-		LOG.info("Password: ");
-		String password = sc.nextLine();
+		LOG.info("Email Id: ");
+		String mail = sc.nextLine();
 		UserRegistration userRegistration = new UserRegistration();
-		if(userRegistration.validatePassword(password))
+		if(userRegistration.validateEmail(mail))
 			LOG.info("Valid");
 		else
 			LOG.info("Invalid");
-	}
-}
+	} }
