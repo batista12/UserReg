@@ -2,6 +2,7 @@ package com.capgemini.userregistration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.util.Scanner;
+
 public class UserRegistration {
 	private static final Logger LOG = LogManager.getLogger(UserRegistration.class);
 	public boolean validateFirstName(String firstName) {
