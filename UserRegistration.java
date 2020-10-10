@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class UserRegistration {
 	private static final Logger LOG = LogManager.getLogger(UserRegistration.class);
 	private boolean validatePassword(String password) {
-		return password.matches("[A-Za-z0-9]{8,}$");
+		return password.matches("(?=.*[A-Z])[A-Za-z]{8,}$");
 	}
 	public static void main( String[] args ) {
 		Scanner sc = new Scanner(System.in);
